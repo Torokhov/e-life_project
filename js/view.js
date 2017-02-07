@@ -21,3 +21,12 @@ View.prototype.findAll = function(ch) {
   }
   return found;
 }
+
+View.prototype.find = function(ch) {
+  var found = this.findAll(ch);
+  if (found.length === 0) {
+    return null;
+  }
+  
+  return randomElement(found);
+}
