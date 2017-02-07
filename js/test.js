@@ -86,6 +86,26 @@ describe("World", function() {
       var view = new View(world, new Vector(15, 1));
       assert.equal(view.findAll("#").length, 4);
     });
+    
+    it("Поиск одного случайного объекта заданного типа", function() {
+      var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #       o          ### #",
+                "#            #             #",
+                "############################"];
+    
+      var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+      var view = new View(world, new Vector(15, 1));
+      assert.equal(view.find("r"), null);
+      assert.equal(view.find("#"), new Vector(13 ,10));
+    });
   });
   
   describe("Wall", function() {
