@@ -26,10 +26,16 @@ describe("Vector", function() {
 });
 
 describe("Grid", function() {
-  it("Создание объекта Grid", function() {
+  it("Создание пространства", function() {
     var grid = new Grid(4, 4);
     assert.equal(grid.width, 4);
     assert.equal(grid.height, 4);
     assert.deepEqual(grid.space, new Array(16));
-  })
+  });
+  
+  it("Возвращает и добавляет объект в пространство", function() {
+    var grid = new Grid(5, 5);
+    grid.set(new Vector(2, 2), 5);
+    assert.equal(grid.get(new Vector(2, 2)), 5);
+  });
 });
