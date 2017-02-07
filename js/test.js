@@ -100,7 +100,7 @@ describe("World", function() {
     
     var world = new World(plan, {"#": Wall, "o": BouncingCritter});
  
-    assert.equal(world.toString, str);
+    assert.equal(world.toString(), str);
   });
 });
 
