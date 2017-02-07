@@ -102,9 +102,9 @@ describe("World", function() {
                 "############################"];
     
       var world = new World(plan, {"#": Wall, "o": BouncingCritter});
-      var view = new View(world, new Vector(15, 1));
+      var view = new View(world, new Vector(12, 9));
       assert.equal(view.find("r"), null);
-      assert.equal(view.find("#"), new Vector(13 ,10));
+      assert.equal(view.find("#"), "se");
     });
   });
   
