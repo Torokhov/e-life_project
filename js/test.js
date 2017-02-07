@@ -38,4 +38,10 @@ describe("Grid", function() {
     grid.set(new Vector(2, 2), 5);
     assert.equal(grid.get(new Vector(2, 2)), 5);
   });
+  
+  it("Проверяет попадает ли точка с заданными координатами в координатную плоскость пространства", function() {
+    var grid = new Grid(5, 5);
+    assert.isTrue(grid.isInside(new Vector(2, 2)));
+    assert.isNotTrue(grid.isInside(new Vector(7, 7)));
+  });
 });
