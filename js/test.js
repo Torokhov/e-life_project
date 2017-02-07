@@ -45,3 +45,26 @@ describe("Grid", function() {
     assert.isNotTrue(grid.isInside(new Vector(7, 7)));
   });
 });
+
+describe("World", function() {
+  it("Создание мира", function() {
+    var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #       o          ### #",
+                "#            #             #",
+                "############################"];
+    
+    var str = "############################\n#    #    #   o           ##\n#              #            \n         #      #####      #\n       ## # #          ## # \n###    ##            # #    \n#       ###     #     #     \n        #        ####      #\n#     ##        o          #\n# o #       o          ### #\n#            #             #\n############################\n";
+    
+    var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+ 
+    assert.equal(world.toString(), str);
+  });
+});
