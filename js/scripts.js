@@ -16,3 +16,6 @@ Grid.prototype.set = function(vector, value) {
 Grid.prototype.get = function(vector) {
   return this.space[vector.x + this.width * vector.y];
 }
+
+function Wall() {}
+
