@@ -48,9 +48,16 @@ describe("Grid", function() {
 
 describe("World", function() {
   describe("Wall", function() {
-    it("создание препятствия", function() {
+    it("Создание препятствия", function() {
       var wall = new Wall();
       assert.isTrue(wall instanceof Wall);
+    });
+  });
+  
+  describe("BouncingCritter", function() {
+    it("Создание существа", function() {
+      var critter = new BouncingCritter();
+      assert.isTrue(critter instanceof BouncingCritter);
     });
   });
   
