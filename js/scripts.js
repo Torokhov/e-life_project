@@ -19,3 +19,10 @@ Grid.prototype.get = function(vector) {
 
 function Wall() {}
 
+function randomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function BouncingCritter() {
+  
+}
