@@ -120,6 +120,26 @@ describe("World", function() {
       var critter = new BouncingCritter();
       assert.isTrue(critter instanceof BouncingCritter);
     });
+    
+    it("Действие существа", function() {
+      var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #       o          ### #",
+                "#            #             #",
+                "############################"];
+    
+      var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+      var view = new View(world, new Vector(12, 9));
+      var critter = new BouncingCritter();
+      assert.equal(critter.act(view).type, "move");
+    });
   });
   
   it("Создание мира", function() {
