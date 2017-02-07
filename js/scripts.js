@@ -61,7 +61,13 @@ function World(map, legend) {
   });
 }
 
-
+function charFromElement(element) {
+  if (element === null) {
+    return " ";
+  } else {
+    return element.originChar;
+  }
+}
 
 
 
