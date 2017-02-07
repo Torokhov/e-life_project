@@ -67,6 +67,25 @@ describe("World", function() {
       assert.isTrue(view instanceof View);
       assert.equal(view.look("n"), "#");
     });
+    
+    it("Поиск всех объектов заданного типа", function() {
+      var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #       o          ### #",
+                "#            #             #",
+                "############################"];
+    
+      var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+      var view = new View(world, new Vector(15, 1));
+      assert.equal(view.findAll("#").length, 4);
+    });
   });
   
   describe("Wall", function() {
