@@ -47,6 +47,13 @@ describe("Grid", function() {
 });
 
 describe("World", function() {
+  describe("Wall", function() {
+    it("создание препятствия", function() {
+      var wall = new Wall();
+      assert.isTrue(wall instanceof Wall);
+    });
+  });
+  
   it("Создание мира", function() {
     var plan = ["############################",
                 "#    #    #   o           ##",
