@@ -1,5 +1,5 @@
 describe("Vector", function() {
-  it("Создание объекта Vector", function(){
+  it("Создание объекта Vector", function() {
     var vector = new Vector(1, 4);
     assert.equal(vector.x, 1);
     assert.equal(vector.y, 4);
@@ -23,4 +23,13 @@ describe("Vector", function() {
     var vector = new Vector(0, 4);
     assert.equal(vector.length, 4);
   });
+});
+
+describe("Grid", function() {
+  it("Создание объекта Grid", function() {
+    var grid = new Grid(4, 4);
+    assert.equal(grid.width, 4);
+    assert.equal(grid.height, 4);
+    assert.deepEqual(grid.space, new Array(16));
+  })
 });
