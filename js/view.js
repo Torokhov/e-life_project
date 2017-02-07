@@ -3,7 +3,6 @@ function View(world, vector) {
   this.vector = vector;
 }
 
-
 View.prototype.look = function(dir) {
   var target = this.vector.plus(directions[dir]);
   if (this.world.grid.isInside(target)) {
@@ -11,4 +10,14 @@ View.prototype.look = function(dir) {
   } else {
     return "#";
   }
+}
+
+View.prototype.findAll = function(ch) {
+  var found = [];
+  for (var dir in directions) {
+    if (this.look(dir) === ch) {
+      found.push(dir);
+    }
+  }
+  return found;
 }
