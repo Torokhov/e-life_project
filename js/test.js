@@ -47,6 +47,28 @@ describe("Grid", function() {
 });
 
 describe("World", function() {
+  describe("View", function() {
+    it("Осмотр мира", function() {
+      var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #       o          ### #",
+                "#            #             #",
+                "############################"];
+    
+      var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+      var view = new View(world, new Vector(15, 1));
+      assert.isTrue(view instanceof View);
+      assert.equal(view.look("n"), "#");
+    });
+  });
+  
   describe("Wall", function() {
     it("Создание препятствия", function() {
       var wall = new Wall();
@@ -74,8 +96,6 @@ describe("World", function() {
                 "# o #       o          ### #",
                 "#            #             #",
                 "############################"];
-    
-   // var str = "############################\n#    #    #   o           ##\n#              #            \n         #      #####      #\n       ## # #          ## # \n###    ##            # #    \n#       ###     #     #     \n        #        ####      #\n#     ##        o          #\n# o #       o          ### #\n#            #             #\n############################\n";
     
     var world = new World(plan, {"#": Wall, "o": BouncingCritter});
  
