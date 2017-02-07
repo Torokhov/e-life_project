@@ -35,5 +35,16 @@ function randomElement(arr) {
 }
 
 function BouncingCritter() {
-  
+  this.direction = randomElement(Object.keys(directions));
 }
+
+
+
+
+
+
+
+
+
+
+
