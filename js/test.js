@@ -204,6 +204,20 @@ describe("World", function() {
     assert.equal(new View(world, new Vector(12, 8)).look("s"), " ");
   });
   
+  it("Передвижение всех существ за один ход", function() {
+    var plan = ["##o##",
+                "## ##",
+                "o   o",
+                "## ##",
+                "##o##"];
+    
+    var resultWorld = "##o##\n## ##\no   o\n## ##\n##o##\n";
+    
+    var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+    world.turn();
+    assert.equal(world.toString(), resultWorld);
+  });
+  
   it("Представление мира в виде строки", function() {
      var plan = ["############################",
                 "#    #    #   o           ##",
