@@ -50,6 +50,17 @@ World.prototype.checkDestination = function(action, vector) {
   }
 }
 
+World.prototype.letAct = function(critter, vector) {
+  var action = critter.act(new View(this, vector));
+  if (action && action.type === "move") {
+    var dest = this.checkDestination(action, vector);
+    if (dest && this.grid.get(dest) === null) {
+      this.grid.set(vector, null);
+      this.grid.set(dest, critter);
+    }
+  }
+}
+
 
 
 
