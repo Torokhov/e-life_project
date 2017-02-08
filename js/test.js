@@ -161,6 +161,26 @@ describe("World", function() {
     assert.isTrue(world instanceof World);
   });
   
+  it("Проверка направления", function() {
+    var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##        o          #",
+                "# o #      #o#         ### #",
+                "#          ###             #",
+                "############################"];
+    
+    var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+    var view = new View(world, new Vector(12, 9));
+    var critter = new BouncingCritter();
+    assert.deepEqual(world.checkDestination(critter.act(view), view.vector), new Vector(12, 8));
+  });
+  
   it("Представление мира в виде строки", function() {
      var plan = ["############################",
                 "#    #    #   o           ##",
