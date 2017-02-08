@@ -211,7 +211,7 @@ describe("World", function() {
                 "## ##",
                 "##o##"];
     
-    var resultWorld = "##o##\n## ##\no   o\n## ##\n##o##\n";
+    var resultWorld = "## ##\n##o##\n o o \n##o##\n## ##\n";
     
     var world = new World(plan, {"#": Wall, "o": BouncingCritter});
     world.turn();
