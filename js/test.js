@@ -198,9 +198,10 @@ describe("World", function() {
     var world = new World(plan, {"#": Wall, "o": BouncingCritter});
     var view = new View(world, new Vector(12, 9));
     var critter = new BouncingCritter();
+    critter.originChar = "o";
     world.letAct(critter, view.vector);
     assert.equal(view.look("n"), "o");
-    assert.equal(new View(world, new Vector(12, 8)).look("s"), null);
+    assert.equal(new View(world, new Vector(12, 8)).look("s"), " ");
   });
   
   it("Представление мира в виде строки", function() {
