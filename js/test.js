@@ -181,6 +181,27 @@ describe("World", function() {
     assert.deepEqual(world.checkDestination(critter.act(view), view.vector), new Vector(12, 8));
   });
   
+  it("Передвижение существа", function() {
+    var plan = ["############################",
+                "#    #    #   o           ##",
+                "#              #            ",
+                "         #      #####      #",
+                "       ## # #          ## # ",
+                "###    ##            # #    ",
+                "#       ###     #     #     ",
+                "        #        ####      #",
+                "#     ##   # #  o          #",
+                "# o #      #o#         ### #",
+                "#          ###             #",
+                "############################"];
+    
+    var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+    var view = new View(world, new Vector(12, 9));
+    var critter = new BouncingCritter();
+    world.letAct(critter, view.vector);
+    assert.equal(view.look("n"), "o");
+  });
+  
   it("Представление мира в виде строки", function() {
      var plan = ["############################",
                 "#    #    #   o           ##",
