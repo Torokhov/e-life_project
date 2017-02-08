@@ -200,6 +200,7 @@ describe("World", function() {
     var critter = new BouncingCritter();
     world.letAct(critter, view.vector);
     assert.equal(view.look("n"), "o");
+    assert.equal(new View(world, new Vector(12, 8)).look("s"), null);
   });
   
   it("Представление мира в виде строки", function() {
