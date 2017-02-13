@@ -269,6 +269,20 @@ describe("World", function() {
   });
 });
 
+describe("LifelikeWorld", function() {
+  it("Создание мира", function() {
+    var world = new LifelikeWorld(
+      ["#####",
+       "#o***",
+       "#####"],
+      {"#": Wall,
+       "O": PlantEater,
+       "*": Plant});
+    
+    assert.equal(world.toString(), "#####\n#o***\n#####");
+  });
+});
+
 
 
 
