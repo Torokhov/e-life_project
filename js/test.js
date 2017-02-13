@@ -151,6 +151,24 @@ describe("World", function() {
       var wallFollower = new WallFollower();
       assert.equal(wallFollower.dir, "s");
     })
+    
+    it("Передвижение существа", function() {
+      var world = new World(
+        ["############",
+         "#    #   ###",
+         "#    ~  #~##",
+         "#   #  #####",
+         "# ## o## # #",
+         "#       #   ",
+         "############"],
+        {"#": Wall,
+         "~": WallFollower,
+         "o": BouncingCritter});
+      
+      var view = new View(world, new Vector(9, 2));
+      var wallFollower = new WallFollower();
+      assert.equal(wallFollower.act(view).direction, "nw");
+    });
   });
   
   it("Создание мира", function() {
