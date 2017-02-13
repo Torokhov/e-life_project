@@ -142,6 +142,12 @@ describe("World", function() {
     });
   });
   
+  describe("WallFollower", function() {
+    it("Вычисление направления", function() {
+      assert.equal(dirPlus("s", -2), "e");
+    });
+  });
+  
   it("Создание мира", function() {
     var plan = ["############################",
                 "#    #    #   o           ##",
