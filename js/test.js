@@ -146,6 +146,11 @@ describe("World", function() {
     it("Вычисление направления", function() {
       assert.equal(dirPlus("s", -2), "e");
     });
+    
+    it("Создание существа", function() {
+      var wallFollower = new WallFollower();
+      assert.equal(wallFollower.dir, "s");
+    })
   });
   
   it("Создание мира", function() {
